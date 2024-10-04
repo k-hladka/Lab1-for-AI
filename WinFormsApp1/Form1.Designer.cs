@@ -160,7 +160,7 @@
             Controls.Add(graphic);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "OR";
+            Text = "Neural implementation of logical functions";
             ((System.ComponentModel.ISupportInitialize)graphic).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
