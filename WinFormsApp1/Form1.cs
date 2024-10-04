@@ -27,7 +27,7 @@ namespace WinFormsApp1
             {
                 this.richTextBox1.Text += "x1= " + arr[i, 0] +
                     " x2= " + arr[i, 1] + " "
-                    + (this.radioButtonOR.Checked ? NeuronOR(arr[i, 0], arr[i, 1]) :  NeuronAND(arr[i, 0], arr[i, 1]))
+                    + (this.radioButtonOR.Checked ? NeuronOR(arr[i, 0], arr[i, 1]) : NeuronAND(arr[i, 0], arr[i, 1]))
                     + " \n";
 
                 this.graphic.Series[0].Points.AddXY(arr[i, 0], arr[i, 1]);
@@ -48,11 +48,36 @@ namespace WinFormsApp1
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-
+            if (this.radioButtonOR.Checked)
+            {
+                this.radioButtonOR.Checked = false;
+                this.radioButtonAND.Checked = true;
+            }
+            else
+            {
+                this.radioButtonOR.Checked = true;
+                this.radioButtonAND.Checked = false;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void labelFunctionGraphics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelClassification_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.Focus();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
 
         }
     }

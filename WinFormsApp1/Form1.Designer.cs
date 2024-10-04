@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             button1 = new Button();
             graphic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             richTextBox1 = new RichTextBox();
-            label1 = new Label();
+            labelChooseFunction = new Label();
             radioButtonOR = new RadioButton();
             radioButtonAND = new RadioButton();
             groupBox1 = new GroupBox();
+            labelFunctionGraphics = new Label();
+            labelClassification = new Label();
             ((System.ComponentModel.ISupportInitialize)graphic).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -54,39 +56,40 @@
             // 
             // graphic
             // 
-            chartArea2.Name = "ChartArea1";
-            graphic.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            graphic.ChartAreas.Add(chartArea1);
             graphic.Location = new Point(12, 209);
             graphic.Margin = new Padding(3, 4, 3, 4);
             graphic.Name = "graphic";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series2.Color = Color.Black;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            graphic.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series1.Color = Color.Black;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            graphic.Series.Add(series1);
             graphic.Size = new Size(664, 460);
             graphic.TabIndex = 2;
             graphic.Text = "chart1";
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(684, 12);
+            richTextBox1.Location = new Point(682, 27);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(489, 658);
+            richTextBox1.Size = new Size(491, 642);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
-            // label1
+            // labelChooseFunction
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = SystemColors.WindowText;
-            label1.Location = new Point(0, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(126, 20);
-            label1.TabIndex = 6;
-            label1.Text = "Оберіть функцію";
-            label1.Click += label1_Click_1;
+            labelChooseFunction.AutoSize = true;
+            labelChooseFunction.ForeColor = SystemColors.WindowText;
+            labelChooseFunction.Location = new Point(0, 3);
+            labelChooseFunction.Name = "labelChooseFunction";
+            labelChooseFunction.Size = new Size(129, 20);
+            labelChooseFunction.TabIndex = 6;
+            labelChooseFunction.Text = "Оберіть функцію:";
+            labelChooseFunction.Click += label1_Click_1;
             // 
             // radioButtonOR
             // 
@@ -115,20 +118,43 @@
             // 
             groupBox1.BackColor = SystemColors.GradientInactiveCaption;
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(labelChooseFunction);
             groupBox1.Controls.Add(radioButtonAND);
             groupBox1.Controls.Add(radioButtonOR);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(493, 186);
+            groupBox1.Size = new Size(479, 170);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
+            // 
+            // labelFunctionGraphics
+            // 
+            labelFunctionGraphics.AutoSize = true;
+            labelFunctionGraphics.Enabled = false;
+            labelFunctionGraphics.Location = new Point(12, 185);
+            labelFunctionGraphics.Name = "labelFunctionGraphics";
+            labelFunctionGraphics.Size = new Size(111, 20);
+            labelFunctionGraphics.TabIndex = 10;
+            labelFunctionGraphics.Text = "Графік функції:";
+            labelFunctionGraphics.Click += labelFunctionGraphics_Click;
+            // 
+            // labelClassification
+            // 
+            labelClassification.AutoSize = true;
+            labelClassification.Location = new Point(682, 4);
+            labelClassification.Name = "labelClassification";
+            labelClassification.Size = new Size(146, 20);
+            labelClassification.TabIndex = 11;
+            labelClassification.Text = "Класифікація точок:";
+            labelClassification.Click += labelClassification_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1185, 682);
+            Controls.Add(labelClassification);
+            Controls.Add(labelFunctionGraphics);
             Controls.Add(groupBox1);
             Controls.Add(richTextBox1);
             Controls.Add(graphic);
@@ -139,15 +165,18 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart graphic;
         private RichTextBox richTextBox1;
-        private Label label1;
+        private Label labelChooseFunction;
         private RadioButton radioButtonOR;
         private RadioButton radioButtonAND;
         private GroupBox groupBox1;
+        private Label labelFunctionGraphics;
+        private Label labelClassification;
     }
 }
